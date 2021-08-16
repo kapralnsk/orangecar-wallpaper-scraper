@@ -1,0 +1,7 @@
+jobs:
+  - name: run-periodic
+    command: "python src/main.py"
+    schedule: "0 0 * * 2"
+    shell: /bin/bash
+    captureStdout: true
+    captureStderr: true
