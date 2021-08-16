@@ -21,8 +21,10 @@ def run():
     new_images = available_images - existing_images
     # at the moment, they have two '1920x1200.jpg' images, which we rename during upload
     # (see TheBoxToDrop.upload_image for details),
-    # because of that, this file will always be marked as new, so in turn we manually discard it
+    # because of that, this file will always be marked as new, 
+    # so in turn we manually discard both variants
     new_images.discard('1920x1200.jpg')
+    new_images.discard('1920x1200.JPG')
     logger.info(f'got {len(new_images)} new images')
 
     for image_name in new_images:
