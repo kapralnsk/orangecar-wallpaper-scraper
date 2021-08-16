@@ -12,7 +12,7 @@ ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 COPY requirements.txt .
 RUN pip install \
-    --trusted-host pypi.python.org \
+    --trusted-host pypi.org \
     --disable-pip-version-check \
     -r requirements.txt
 
