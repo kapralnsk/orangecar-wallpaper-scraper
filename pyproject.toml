@@ -1,0 +1,43 @@
+[tool.poetry]
+name = "orangecar-wallpaper-scraper"
+version = "1.0.0"
+description = "Periodical script, which scrapes wallpapers from given source of OrangeCars & then uploads them to Dropbox."
+authors = ["Aleksandr Kaurdakov <kapralnsk@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+requests = "^2.31.0"
+crontab = "^1.0.1"
+dropbox = "^11.36.2"
+environs = "^9.5.0"
+
+[tool.poetry.group.dev.dependencies]
+bandit = "^1.7.5"
+black = "^23.3.0"
+pytest = "^7.3.2"
+
+[tool.black]
+line-length = 120
+target-version = ['py311']
+include = '\.pyi?$'
+exclude = '''
+
+(
+  /(
+      \.eggs         # exclude a few common directories in the
+    | \.git          # root of the project
+    | \.vscode
+    | \.venv
+  )/
+)
+'''
+[tool.isort]
+profile = 'black'
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
